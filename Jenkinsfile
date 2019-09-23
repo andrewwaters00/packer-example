@@ -1,4 +1,4 @@
-#!/usr/bin/groovy
+pipeline {
 
 buildfile="firstrun.json"
 
