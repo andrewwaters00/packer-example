@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "making a change"
+
 echo "Updating packages - wait for completion"
 
 sudo apt update -y
