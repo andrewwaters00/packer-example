@@ -1,8 +1,6 @@
 pipeline {
-
-buildfile="firstrun.json"
-
-node('any') {
+ agent any 1
+}
 
   stage('Create Packer AMI') {
         steps {
