@@ -27,6 +27,7 @@ options {
             usernamePassword(credentialsId: 'AWS_KEY', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
             usernamePassword(credentialsId: 'github_account', passwordVariable: 'REPO_PASS', usernameVariable: 'REPO_USER'),
           ]) {
+            sh 'rm -rf packer-terraform'
             sh 'git clone https://github.com/andrewwaters00/packer-terraform'
             sh '''
                cd packer-terraform
