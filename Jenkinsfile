@@ -11,8 +11,8 @@ pipeline {
         }
       }
     }
-
-stage('AWS Deployment') {
+ 
+ stage('AWS Deployment') {
       steps {
           withCredentials([
             usernamePassword(credentialsId: 'AWS', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
@@ -30,9 +30,7 @@ stage('AWS Deployment') {
         }
       }
     }
-  }
-}
-              
+             
 
 
 
