@@ -16,6 +16,10 @@ echo "Install zip"
 
 sudo apt-get install zip -y
 
+echo "Install pip"
+
+sudo apt-get install python-pip -y
+
 echo "Installing terraform version 0.12.9"
 
 curl https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip --output terraform_0.12.9.zip && unzip terraform_0.12.9.zip && sudo mv terraform /usr/local/sbin
