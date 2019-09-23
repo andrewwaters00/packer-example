@@ -1,7 +1,7 @@
 pipeline {
- agent any 1
+ agent any
 }
-
+ stages {
   stage('Create Packer AMI') {
         steps {
           withCredentials([
@@ -10,7 +10,7 @@ pipeline {
             sh 'packer build -var aws_access_key=${AWS_KEY} -var aws_secret_key=${AWS_SECRET} ${buildfile}'
         }
       }
-     }
+    }
 
 stage('AWS Deployment') {
       steps {
