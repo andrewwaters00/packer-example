@@ -25,7 +25,7 @@ options {
       steps {
           withCredentials([
             usernamePassword(credentialsId: 'AWS_KEY', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
-            sshUserPrivateKey(credentialsId: 'ssh_key', keyFileVariable: 'SSH_KEY'), 
+            usernamePassword(credentialsId: 'github_account', passwordVariable: 'REPO_PASSWD', usernameVariable: 'REPO_USER'), 
           ]) {
             sh 'rm -rf packer-terraform'
             sh 'git clone https://github.com/andrewwaters00/packer-terraform'
@@ -35,7 +35,7 @@ options {
                terraform apply -auto-approve -var access_key=${AWS_KEY} -var secret_key=${AWS_SECRET}
                git add terraform.tfstate
                git -c user.name="andrewwaters00" -c user.email="andrew.waters00@googlemail.com" commit -m "terraform state update from Jenkins"
-               git push master
+               git push https://$REPO_USER:$REPO_PASSWD@github.com/packer-terraform 
             '''
         }
       }
