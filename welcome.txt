@@ -1,0 +1,6 @@
+This machine has been setup with the following tools -
+
+Terraform
+docker-ce 
+Python3 & Boto3
+
