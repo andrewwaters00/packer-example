@@ -1,8 +1,17 @@
 pipeline {
- agent any
+ 
+  agent { 
+    node {
+      label 'any'
+ }
+}
+
+options {
+  timestamps()
+}
 
  stages {
-  stage('Create Packer AMI') {
+  stage('AMI') {
         steps {
           withCredentials([
             usernamePassword(credentialsId: 'AWS', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY')
@@ -29,8 +38,8 @@ pipeline {
             '''
         }
       }
-    }
-             
+   }
+} 
 
 
 
