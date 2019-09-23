@@ -30,7 +30,6 @@ stage('AWS Deployment') {
         }
       }
     }
-  }
  
               
 
