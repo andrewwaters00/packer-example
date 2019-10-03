@@ -4,6 +4,10 @@ echo "Updating packages - wait for completion"
 
 sudo apt update -y
 
+echo "Instal yum package manager"
+
+sudo apt-get install yum -y
+
 echo "Install python3 and boto3"
 
 sudo apt-get install python3 -y
